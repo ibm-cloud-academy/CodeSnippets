@@ -1,0 +1,9 @@
+#!/bin/bash
+GRUNTFILE="tests/Gruntfile.js"
+if [ -f $GRUNTFILE ]; then
+  npm install -g npm@3.7.2 ### work around default npm 2.1.1 instability
+  npm install
+  grunt dev-test-cov --no-color -f --gruntfile $GRUNTFILE --base .
+else
+  echo "$GRUNTFILE not found."
+fi
