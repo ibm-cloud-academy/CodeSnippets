@@ -35,6 +35,7 @@ npm -v
 hline
 
 ## Docker version
+echo -n "docker version "
 docker version
 hline
 
@@ -46,7 +47,6 @@ hline
 ## Bluemix version
 echo -n "Cloud Foundry version "
 bx -version
-hline
 
 hline =
 echo
