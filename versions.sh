@@ -40,12 +40,12 @@ docker version
 hline
 
 ## Cloud Foundry version
-echo -n "Cloud Foundry version "
+echo -n "Cloud Foundry CLI version "
 cf version
 hline
 
 ## Bluemix version
-echo -n "Cloud Foundry version "
+echo -n "Bluemix CLI version "
 bx -version
 hline
 
