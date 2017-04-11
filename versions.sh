@@ -47,6 +47,11 @@ hline
 ## Bluemix version
 echo -n "Cloud Foundry version "
 bx -version
+hline
+
+## OpenWhisk commandline
+echo "OpenWhisk CLI version "
+wsk property get --cliversion
 
 hline =
 echo
