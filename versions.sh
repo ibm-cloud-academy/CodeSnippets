@@ -50,7 +50,7 @@ bx -version
 hline
 
 ## OpenWhisk commandline
-echo "OpenWhisk CLI version "
+echo -n "OpenWhisk "
 wsk property get --cliversion
 
 hline =
