@@ -9,6 +9,11 @@ URL=https://raw.githubusercontent.com/bluemix-enablement
 REMOTE_DIR=$URL/CodeSnippets/master
 REMOTE_FILE_NAME=$REMOTE_DIR/$FILE_NAME
 
+if [ "$EUID" -ne 0 ]
+  then echo "Script should be run as root"
+  exit
+fi
+
 sudo chmod a+wx $LOCAL_FILE_NAME
 sudo mv $LOCAL_FILE_NAME $OLD_FILE_NAME
 ## curl variant  sudo curl -o $LOCAL_FILE_NAME $REMOTE_FILE_NAME
