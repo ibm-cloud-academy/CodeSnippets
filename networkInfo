@@ -1,0 +1,38 @@
+#!/bin/bash
+
+## Print a horizontal line
+hline () {
+        printf -v _hr "%*s" $(tput cols) && echo ${_hr// /${1--}}
+}
+
+function getIP() {
+
+echo " Interface: "$1
+echo "IP Address: "$(ifconfig $1 | grep Mask | cut -d ':' -f2 | cut -d " " -f1)
+echo "  Net Mask: "$(ifconfig $1 | grep Mask | cut -d ':' -f4 | cut -d " " -f1)
+}
+
+is_alive_ping()
+{
+  ping -c 1 $1 >& /dev/null
+  if [ $? -eq 0 ]
+  then
+	echo [*] $1 `dig +short $1`
+  else
+	echo [ ] $1 `dig +short $1`
+  fi
+}
+clear
+hline =
+echo "  Hostname: "$HOSTNAME
+hline
+for intf in $(ls /sys/class/net)
+  do getIP $intf;
+  hline
+done 
+echo "Testing connection to some known sites"
+for i in google.com github.com bluemix.net 
+do
+  is_alive_ping $i 
+done
+hline =
