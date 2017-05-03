@@ -1,9 +1,6 @@
 #!/bin/bash
 TDIR=$(mktemp -d)
 LOCAL_DIR=/usr/local/bin
-LOCAL_FILE_NAME=$LOCAL_DIR/$FILE_NAME
-
-OLD_FILE_NAME=$LOCAL_FILE_NAME.old
 
 URL=https://github.com/bluemix-enablement/CodeSnippets/trunk/scriptupdates/
 
@@ -16,7 +13,7 @@ echo Downloading updated scripts from $URL to $TDIR
 svn export --force $URL $TDIR
 pushd $TDIR
 chmod +x *
-mv -v * /usr/local/bin/
+mv -v * LOCAL_DIR
 popd
 rmdir $TDIR
 
