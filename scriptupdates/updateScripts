@@ -13,7 +13,7 @@ echo Downloading updated scripts from $URL to $TDIR
 svn export --force $URL $TDIR
 pushd $TDIR
 chmod +x *
-mv -v * LOCAL_DIR
+mv -v * $LOCAL_DIR
 popd
 rmdir $TDIR
 
