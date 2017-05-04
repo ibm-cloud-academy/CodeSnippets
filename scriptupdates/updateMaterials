@@ -1,9 +1,9 @@
 #!/bin/bash
-LOCAL_DIR=~
+LOCAL_DIR=$(echo ~)/materials
 
-URL=https://github.com/bluemix-enablement/CodeSnippets/trunk/materials/
+URL=https://github.com/bluemix-enablement/CodeSnippets/trunk/Materials/
 
 
-echo Downloading from $URL to $TDIR
-svn export --force $URL $TDIR
+echo Downloading from $URL to $LOCAL_DIR
+svn export --force $URL $LOCAL_DIR
 

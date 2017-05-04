@@ -1,5 +1,0 @@
-cf create-service cloudantNoSQLDB Lite myMicroservicesCloudant
-# Push app
-export CF_APP_NAME="dev-$CF_APP"
-cf push "${CF_APP_NAME}"
-export APP_URL=http://$(cf app $CF_APP_NAME | grep urls: | awk '{print $2}')
