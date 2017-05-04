@@ -1,0 +1,9 @@
+#!/bin/bash
+LOCAL_DIR=~
+
+URL=https://github.com/bluemix-enablement/CodeSnippets/trunk/materials/
+
+
+echo Downloading from $URL to $TDIR
+svn export --force $URL $TDIR
+
