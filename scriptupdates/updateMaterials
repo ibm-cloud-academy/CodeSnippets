@@ -1,7 +1,7 @@
 #!/bin/bash
 LOCAL_DIR=$(echo ~)/materials
 
-URL=https://github.com/bluemix-enablement/CodeSnippets/trunk/Materials/
+URL=https://github.com/bluemix-enablement/CodeSnippets/trunk/materials/
 
 
 echo Downloading from $URL to $LOCAL_DIR
