@@ -49,6 +49,11 @@ echo -n "Bluemix CLI version "
 bx -version
 hline
 
+## Bluemix plugins
+echo -n "Bluemix Plugins versions "
+bx plugin list
+hline
+
 ## OpenWhisk commandline
 echo -n "OpenWhisk "
 wsk property get --cliversion
