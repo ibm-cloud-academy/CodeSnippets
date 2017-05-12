@@ -39,6 +39,11 @@ echo -n "docker version "
 docker version
 hline
 
+## Kubernetes version
+echo "Kubernetes client version "
+kubectl version --short --client
+hline
+
 ## Cloud Foundry version
 echo -n "Cloud Foundry CLI version "
 cf version
