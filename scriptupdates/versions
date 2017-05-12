@@ -50,7 +50,7 @@ bx -version
 hline
 
 ## Bluemix plugins
-echo -n "Bluemix Plugins versions "
+echo "Bluemix Plugins versions "
 bx plugin list
 hline
 
