@@ -1,0 +1,23 @@
+git clone https://github.com/ibm-cloud-academy/LightBlueCompute
+
+docker build -t mysql .
+
+docker login cloudcluster.icp:8500
+
+docker tag mysql cloudcluster.icp:8500/default/mysql
+
+docker push cloudcluster.icp:8500/default/mysql
+
+kubectl describe pod | grep mysql-lightblue-deployment | grep Name
+
+kubectl exec -it <podname> -- bash
+
+mysql -u<mysqluser> -p<mysqlpassword> -h<worker_publicIP> -P<nodePort>
+
+select count(*) from inventorydb.items;
+
+docker tag catalog cloudcluster.icp:8500/default/catalog
+  
+docker push cloudcluster.icp:8500/default/catalog
+
+curl http://10.10.1.20:30111/micro/items/13401
