@@ -1,0 +1,7 @@
+wget --no-check-certificate https://master:8443/helm-api/cli/linux-amd64/helm
+
+kubectl get pod -n kube-system
+
+bx plugin install ./Downloads/icp-linux-amd64
+
+bx pr login -a https://master:8443 -u admin -p passw0rd --skip-ssl-validation
