@@ -1,0 +1,38 @@
+/jenkins *(rw,sync,no_root_squash)
+
+bx pr cluster-config cloudcluster
+
+		  apiVersion: v1
+                  kind: PersistentVolume
+                  metadata:
+                    name: jenkins-pv
+                  spec:
+                    capacity:
+                      storage: 1Gi
+                    accessModes:
+                      - ReadWriteOnce
+                    nfs:
+                      server: 10.10.1.10
+                      path: "/jenkins"
+
+kubectl create -f jenkinpv.yaml
+
+helm install --tls -n icpjenkins\
+--set Master.AdminPassword=passw0rd \
+--set Master.ServiceType=NodePort \
+--set Master.NodePort=31234 \
+--set Persistence.Size=1Gi \
+stable/jenkins
+
+kubectl get secret icpjenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode
+
+			apiVersion: v1
+			kind: Secret
+			metadata:
+			  name: icpadmin
+			type: Opaque
+			data:
+			  username: <user-encoded>
+			  password: <password-encoded>
+
+			  
