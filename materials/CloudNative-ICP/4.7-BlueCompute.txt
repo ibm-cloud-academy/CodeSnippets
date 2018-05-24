@@ -1,0 +1,66 @@
+https://github.com/ibm-cloud-academy/icp-jenkins-helm-bluecompute
+
+charts/ibmcase-couchdb/Jenkinsfile
+
+helm status --tls bluecompute-couchdb
+
+helm status --tls bluecompute-inventory-mysql
+
+charts/ibmcase-elasticsearch/Jenkinsfile
+
+helm status --tls bluecompute-elasticsearch
+
+charts/ibmcase-inventory-mysql/Jenkinsfile
+
+helm status --tls bluecompute-inventory-mysql
+
+charts/ibmcase-orders-mysql/Jenkinsfile
+
+helm status --tls bluecompute-orders-mysql
+
+kubectl create secret docker-registry icpregistry \
+--docker-server=cloudcluster.icp:8500 \
+--docker-username=admin --docker-password=passw0rd \
+--docker-email=admin@cloudcluster.icp
+
+https://github.com/ibm-cloud-academy/refarchcloudnative-micro-customer
+
+Jenkinsfile
+
+helm status --tls bluecompute-customer
+
+kubectl port-forward <customerpod> 8080:8080
+
+curl http://127.0.0.1:8080/micro/check
+
+https://github.com/ibm-cloud-academy/refarch-cloudnative-micro-inventory
+
+inventory/Jenkinsfile
+
+helm status --tls bluecompute-inventory
+
+kubectl port-forward <inventorypod> 8080:8080
+
+curl http://127.0.0.1:8080/micro/inventory
+
+catalog/Jenkinsfile
+
+helm status --tls bluecompute-catalog
+
+kubectl port-forward <catalogpod> 8081:8081
+
+https://github.com/ibm-cloud-academy/refarchcloudnative-micro-orders
+
+helm status --tls bluecompute-orders
+
+kubectl port-forward <orderspod> 8080:8080
+
+curl http://127.0.0.1:8080/micro/check
+
+https://github.com/ibm-cloud-academy/refarchcloudnative-auth
+
+helm status --tls bluecompute-auth
+
+https://github.com/ibm-cloud-academy/refarchcloudnative-bluecompute-web
+
+helm status --tls bluecompute-web
